@@ -6,14 +6,16 @@
 
 1. RDD is a read-only collection of objects partitioned across a set of machines that can be rebuilt if a partition is lost.
 2. RDDs does exist in physical storage, instead can be computed
-3. Represented by a Scala object
-4. For ways to construct
+3. user can control persistence and partitioning.
+4. Represented by a Scala object
+5. For ways to construct
    1. from a file(Hadoop Distributed File System, HDFS)
    2. Parallelizing a Scala collection (array) (divided into multiple slices and send to multiple nodes)
    3. transforming from and existing RDD (map, reduceByKey)
    4. Changing the persistence of an existing RDD
       1. Cache 
       2. Save 
+6. Persist method: Spark keeps persistent RDDs in memory by default but it can spill them to disk if there is not enough RAM. User can also set a persistence priority on each RDD to specify which in-memory data should spill to disk first
 
 ### 2. Parallel Operations
 
@@ -25,6 +27,13 @@
 
 1. Broadcast variables: wraps the value and ensures that it is only copied to each worker once
 2. Accumulators: add-only and only driver can read
+
+### 4. Advantages of RDD Model
+
+1. RDD can only be created through coarse-grained transformations.
+2. immutable natures lets a system mitigate slow nodes by running backup copies of slow tasks as in MapReduce. 
+3. In bulk operations on RDDs, a runtime can schedule tasks beased on data locality.
+4. Degrade gracefully when there is not enough memory. Partitions that do not fit in RAM can be stored on disk and will provide similar performance to current data-parallel systems. 
 
 ## 2. Examples:
 
@@ -69,3 +78,4 @@ for (i <- 1 to ITERATIONS) {
            .collect()
 }
 ```
+
