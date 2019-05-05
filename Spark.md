@@ -78,3 +78,27 @@ for (i <- 1 to ITERATIONS) {
            .collect()
 }
 ```
+
+## 3. Spark Program
+
+### 1. Driver and Workers
+
+1. Worker run on cluster nodes or in local threads
+2. Driver program
+3. Spark context: a spark program first creates a SparkContext object
+   1. tells spark how and where to access a cluster
+   2. pySpark shell and Databricks Cloud automatically create the sc variable
+   3. ipython and programs must use a constructor to create a new SparkContext
+
+### 2. Closures
+
+1. spark automatically creates closures for 
+   1. functions that run on RDDs at workers
+   2. any global variables used by those workers
+2. One closure per worker
+   1. sent for every task
+   2. No communication between workers
+   3. changes to global variables at workers are not sent to driver
+
+### 
+
