@@ -78,4 +78,3 @@ for (i <- 1 to ITERATIONS) {
            .collect()
 }
 ```
-
