@@ -111,3 +111,74 @@ println(raw"This is a \n newline") // printed literally
 val escaped = "This is a \n newline";
 println(raw"$escaped") // \n will break the line
 ```
+
+## 2. OOP for scala
+1. Basic
+- Class paramaters are not Fields(member)
+```scala
+class Person(name: String, age: Int) // constructor
+
+class Person(name: String, val age: Int) {// now you can use parameter as field
+
+    // Method
+    def greet(name: String): Unit = println(s"$name says: Hi, $name")
+
+    // overloading
+    def greet(): Unit
+
+    // multiple constructor
+    def this(name: String) = this(name, 0)
+    def this() = this("John Doe");
+
+} 
+```
+2. Method Notation
+```scala
+class Person(name: String, favoriteMovie: String) {
+    def likes(movie: String): Boolean = movie == favoriteMovie
+}
+
+val mary = new Person("Mary", "Inception")
+
+// infix notation = operator notation:
+println(mary likes "Inception")
+```
+3. Scala Objects
+- Scala does not have class-level functoinality "static"
+- Scala object = singleton instance
+```scala
+object Person {
+    val N_EYES = 2
+}
+```
+- Companions: have the same name for a class and an object
+```scala
+object Person {
+    val N_EYES = 2
+}
+
+class Person {
+
+}
+
+val mary = new Person
+val john = new Person
+println(mary == john) // false
+
+val mary = Person
+val john = Person
+println(mary == john) // true
+
+def main(args: Array[String]): Unit
+
+```
+4. Inheritance 
+
+5. Packaging and Import
+- Package members are accessible by their simple name
+- import the package
+```scala
+val date = new Date
+val sqlDate = new SqlDate(2018, 5, 4)
+```
+- Packages are in hierarchy
