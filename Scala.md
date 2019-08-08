@@ -75,9 +75,39 @@ def calledByValue(x: Long): Unit = {
     println("by value: " + x)
     println("by value: " + x)
 }
-
+// => the expression is passed literally
 def calledByName(x: => Long): Unit = {
     println("by value: " + x)
     println("by value: " + x)
 }
+```
+9. Default and Named Arguments
+```scala
+def trFact(n: Int, acc: Int = 1): Int =
+    if (n <= 1) acc
+    else trFact(n -1, n*acc)
+```
+10. Smart Operations on String
+```scala
+val str: String = "Hello, I am learning Scala"
+println(str.charAt(2))
+println(str.substring(7, 11))
+println(str.split(" ").toList)
+println(str.startsWith("Hello"))
+println(str.replace(" ", "-"))
+println(str.toLowerCase())
+println(str.length)
+str.take(2)
+str.reverse
+
+// S-Interpolators
+val name = "zhi ji"
+val age = "23"
+val greeting = s"Hello, my name is $name and I will be turning $(age + 1) years old"
+// F-interpolators, formatted string
+val myth = f"$name%s can eat $speed%2.2f burgers per minute"
+// raw-interpolator
+println(raw"This is a \n newline") // printed literally
+val escaped = "This is a \n newline";
+println(raw"$escaped") // \n will break the line
 ```
