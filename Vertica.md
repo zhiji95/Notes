@@ -11,3 +11,6 @@ Column-oriented Vertica Analytics Platform
 8. Native integration with open source big data technologies (Kafka)
 9. Support for standard programming interface
 10. High-performance and parallel data transfer to statistical tools such as built-in machine learning algorithms.
+
+## Optimization:
+Integrates with Hadoop to leverage HDFS
