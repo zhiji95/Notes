@@ -1,6 +1,6 @@
 # C++ Note
 
-## 1. Basics
+## 一. Basics
 ### 1. Programs
 1. Low level compling:
 - C++ is a complied language
@@ -10,5 +10,11 @@
 - Core language features: built-in types, loops
 - Standard-library components: containers, I/O operations
 3. Statically typed: the type of every entity must be known to the compiler.
-4. `main()`: every C++ program must have exactly one global function `main()`
-5. 
+4. Important syntax
+- `main()`: every C++ program must have exactly one global function `main()`
+- `#include <iostream>` 
+- `<<` write the second argument onto its first.
+- `std::cout` , 
+- `std::`: specifies that 
+5. Function
+
