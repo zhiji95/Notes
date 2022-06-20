@@ -8,3 +8,4 @@ My notes for some technical stacks:
 6. [Debezium](./Debezium.md)
 7. [Vertica](./Vertica.md)
 8. [C++](./C++.md)
+9. [Apache Druid](./Apache_Druid.md)
