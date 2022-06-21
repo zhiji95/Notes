@@ -54,3 +54,7 @@
 
 ## Diagram
 ![image](https://user-images.githubusercontent.com/33732707/174683210-4860c665-d548-4c97-a62c-efaddea33a0a.png)
+
+## Storage Design
+1. Datasources
+2. Segment
