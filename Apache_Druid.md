@@ -1,6 +1,6 @@
 # Introduction
 ## Key Features of Druid
-1. Columnar Storage
+1. Columnar Storage: optimized to its type
 2. Scalable distributed system
 3. Massively parallel processing
 4. realtime or batch ingestion
